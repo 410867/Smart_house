@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onMyButton_5Click(View view) {
-        button_5 = (Button) findViewById(R.id.button4);
+        button_5 = (Button) findViewById(R.id.button5);
         buttonChecked(button_5, 4);
     }
 
