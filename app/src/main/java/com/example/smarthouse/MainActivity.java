@@ -65,11 +65,11 @@ public class MainActivity extends AppCompatActivity {
     public void buttonChecked(Button button, int count_button) {
         if(buttonTest[count_button]) {
             button.setBackgroundColor(color_green);
-            button.setText("Вкл");
+            button.setText("Увімк");
             buttonTest[count_button] = false;
         } else {
             button.setBackgroundColor(color_red);
-            button.setText("Выкл");
+            button.setText("Вимк");
             buttonTest[count_button] = true;
         }
 
@@ -90,8 +90,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void renderNotification() {
-        /*Toast.makeText(this, "Зачем вы нажали?", Toast.LENGTH_SHORT).show();*/
-
         Toast notification = Toast.makeText(this, "Вода закипела!", Toast.LENGTH_SHORT);
         new Timer().schedule(new TimerTask() {
             @Override

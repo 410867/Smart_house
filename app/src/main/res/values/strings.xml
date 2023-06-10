@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">Smart House</string>
-    <string name="off">Выкл</string>
-    <string name="on">Вкл</string>
-    <string name="text_1">Телевизор</string>
+    <string name="off">Вимк</string>
+    <string name="on">Увімк</string>
+    <string name="text_1">Телевізор</string>
     <string name="text_2">Чайник</string>
-    <string name="text_3">Свет гостинная</string>
-    <string name="text_4">Отопление</string>
-    <string name="text_5">Кондиционер</string>
+    <string name="text_3">Світло вітальня</string>
+    <string name="text_4">Опалення</string>
+    <string name="text_5">Кондиціонер</string>
 </resources>
