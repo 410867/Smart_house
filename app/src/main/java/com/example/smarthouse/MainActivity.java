@@ -7,6 +7,10 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
     Button button_1;
@@ -30,16 +34,15 @@ public class MainActivity extends AppCompatActivity {
     public void onMyButton_1Click(View view) {
         button_1 = (Button) findViewById(R.id.button);
         buttonChecked(button_1, 0);
-
-        /*
-            // выводим сообщение
-            Toast.makeText(this, "Зачем вы нажали?", Toast.LENGTH_SHORT).show();
-        */
     }
 
     public void onMyButton_2Click(View view) {
         button_2 = (Button) findViewById(R.id.button2);
         buttonChecked(button_2, 1);
+
+        if(!buttonTest[1]) {
+            renderNotification();
+        }
     }
 
     public void onMyButton_3Click(View view) {
@@ -55,17 +58,18 @@ public class MainActivity extends AppCompatActivity {
     public void onMyButton_5Click(View view) {
         button_5 = (Button) findViewById(R.id.button5);
         buttonChecked(button_5, 4);
+
     }
 
     @SuppressLint("SetTextI18n")
     public void buttonChecked(Button button, int count_button) {
         if(buttonTest[count_button]) {
             button.setBackgroundColor(color_green);
-            button.setText("On");
+            button.setText("Вкл");
             buttonTest[count_button] = false;
         } else {
             button.setBackgroundColor(color_red);
-            button.setText("Off");
+            button.setText("Выкл");
             buttonTest[count_button] = true;
         }
 
@@ -83,5 +87,17 @@ public class MainActivity extends AppCompatActivity {
         buttonChecked(button_3, 2);
         buttonChecked(button_4, 3);
         buttonChecked(button_5, 4);
+    }
+
+    public void renderNotification() {
+        /*Toast.makeText(this, "Зачем вы нажали?", Toast.LENGTH_SHORT).show();*/
+
+        Toast notification = Toast.makeText(this, "Вода закипела!", Toast.LENGTH_SHORT);
+        new Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+                notification.show();
+            }
+        }, 5000L); // 300 is the delay in millis
     }
 }
